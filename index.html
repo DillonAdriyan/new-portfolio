@@ -295,7 +295,7 @@
  <section id="contact" class="transition duration-700 ease-in-out pt-36 pb-32 dark:bg-slate-800">
   <div class="container">
    <div class="w-full px-4">
-    <div class="max-w-xl mx-auto text-center mb-16">
+    <div class="max-w-xl mx-auto text-center mb-6">
      <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
      <h2 class="font-bold text-dark text-3xl mb-4 md:text-4xl xl:text-5xl dark:text-white">Hubungi Saya</h2>
      <p class="font-medium text-md text-secondary lg:text-lg">
@@ -303,23 +303,30 @@
      </p>
     </div>
    </div>
-   <form>
+   <div class="my-alert w-full lg:w-2/3 border-yellow-500 border-2 h-14 mb-6 rounded-lg">
+    <div id="btn-close" class="absolute h-6 w-6 text-2xl right-1 -mt-8 z-10">×</div>
+    <h2 class="text-center text-lg pt-3 font-semibold text-yellow-600">Pesan Berhasil Terkirim !</h2>
+   </div>
+   <form name="contact-dillon">
     <div class="w-full lg:w-2/3 lg:mx-auto">
 
      <div class="w-full px-4 mb-8">
       <label for="name" class="text-base font-bold text-primary mb-2">Nama</label>
-      <input id="name" type="text" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+      <input id="name" name="nama" type="text" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
      </div>
      <div class="w-full px-4 mb-8">
       <label for="email" class="text-base font-bold text-primary mb-2">Email</label>
-      <input id="email" type="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+      <input id="email" name="email" type="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
      </div>
      <div class="w-full px-4 mb-8">
       <label for="massage" class="text-base font-bold text-primary mb-2">Pesan</label>
-      <textarea id="massage" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
+      <textarea id="massage" name="pesan" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
      </div>
      <div class="w-full px-4">
-      <button class="w-full text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500" type="submit">Kirim</button>
+      <button class="w-full text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500 btn-kirim" type="submit">Kirim</button>
+      <button class="w-full h-12 flex text-base font-semibold hidden text-white bg-primary bg-opacity-60 py-3 px-8 rounded-full shadow-lg transition duration-500 btn-loading" type="submit"><span class="block mx-auto h-6 w-6 animate-spin text-white">
+       <svg class="fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Spinrilla</title><path d="M12 8.816a3.184 3.184 0 1 0 0 6.368 3.184 3.184 0 1 0 0-6.368zM12 0v3.918A8.082 8.082 0 0 0 3.918 12H0A12 12 0 0 1 12 0zm0 24v-3.918A8.082 8.082 0 0 0 20.082 12H24a12 12 0 0 1-12 12z"/></svg></span>
+       </button>
      </div>
     </div>
    </form>
@@ -418,8 +425,40 @@
  </a>
  <!-- Back to top end  -->
 
+<!-- Script contact -->
+<script type="text/javascript" charset="utf-8">
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxqE3V1by7HCjSWqyCMLkiiDablI7aF8RhFHVYEu0_R-ZrIPQoioPNXncRoP5XD_wC2/exec'
+    const form = document.forms['contact-dillon']
+    const btnKirim = document.querySelector('.btn-kirim')
+    const btnLoading = document.querySelector('.btn-loading')
+    const myAlert = document.querySelector('.my-alert')
+    const btnClose = document.querySelector('#btn-close')
 
 
- <script src="dist/js/script.js" type="text/javascript" charset="utf-8"></script>
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      btnLoading.classList.toggle('hidden')
+      btnKirim.classList.toggle('hidden')
+      fetch(scriptURL, {
+        method: 'POST', body: new FormData(form)})
+      .then(response => {
+        btnLoading.classList.toggle('hidden')
+        btnKirim.classList.toggle('hidden')
+        myAlert.classList.toggle('hidden')
+        form.reset();
+        console.log('Success!', response)
+      })
+      .catch(error => console.error('Error!', error.message))
+    })
+    
+    btnClose.addEventListener("click", function() {
+     myAlert.classList.toggle('hidden')
+    })
+ </script>
+    
+
+ <script src="dist/js/script.js" type="text/javascript" charset="utf-8">
+ </script>
 </body>
 </html>
