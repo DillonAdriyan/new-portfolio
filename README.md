@@ -8,5 +8,8 @@ Dengan bantuan TailwindCss
 - To Top 🔝
 - Contact From 📝
 ## Menggunakan tailwindcss
+- [tailwindcss](https://tailwindcss.com)
 ## Animasi by Aos
+- [aos](https://aos.com)
 ## Blob maker
+- [blobmaker](https://blobmaker.com)
