@@ -13,3 +13,4 @@ Dengan bantuan TailwindCss
 - [aos](https://aos.com)
 ## Blob maker
 - [blobmaker](https://blobmaker.com)
+## My Portofolio in Beginner Web Developer 
