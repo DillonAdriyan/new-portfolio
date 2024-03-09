@@ -304,29 +304,37 @@
     <div id="btn-close" class="absolute h-6 w-6 text-2xl right-1 -mt-8 z-10">×</div>
     <h2 class="text-center text-lg pt-3 font-semibold text-yellow-600">Pesan Berhasil Terkirim !</h2>
    </div>
-   <form name="contact-dillon">
-    <div class="w-full lg:w-2/3 lg:mx-auto">
-
-     <div class="w-full px-4 mb-8">
-      <label for="name" class="text-base font-bold text-primary mb-2">Nama</label>
-      <input id="name" name="nama" type="text" class="w-full bg-stone-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
-     </div>
-     <div class="w-full px-4 mb-8">
-      <label for="email" class="text-base font-bold text-primary mb-2">Email</label>
-      <input id="email" name="email" type="email" class="w-full bg-stone-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
-     </div>
-     <div class="w-full px-4 mb-8">
-      <label for="massage" class="text-base font-bold text-primary mb-2">Pesan</label>
-      <textarea id="massage" name="pesan" class="w-full bg-stone-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
-     </div>
-     <div class="w-full px-4">
-      <button class="w-full text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500 btn-kirim" type="submit">Kirim</button>
-      <button class="w-full h-12 flex text-base font-semibold hidden text-white bg-primary bg-opacity-60 py-3 px-8 rounded-full shadow-lg transition duration-500 btn-loading" type="submit"><span class="block mx-auto h-6 w-6 animate-spin text-white">
-       <svg class="fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Spinrilla</title><path d="M12 8.816a3.184 3.184 0 1 0 0 6.368 3.184 3.184 0 1 0 0-6.368zM12 0v3.918A8.082 8.082 0 0 0 3.918 12H0A12 12 0 0 1 12 0zm0 24v-3.918A8.082 8.082 0 0 0 20.082 12H24a12 12 0 0 1-12 12z"/></svg></span>
-       </button>
-     </div>
+   
+   <!-- form body -->
+   
+<form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/1fiKCkSeCkxB7C-SeN0o0_6RJULpRgrat1aCTFsatdfs/formResponse?" target="hidden_iframe">
+  <div class="w-full lg:w-2/3 mx-auto">
+    <div class="flex flex-col lg:flex-row">
+      <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+        <label for="entry.170160121" class="text-base font-bold text-primary mb-2">Nama</label>
+        <input id="entry.170160121" name="entry.170160121" type="text" class="w-full bg-stone-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+      </div>
+      <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+        <label for="entry.1499646864" class="text-base font-bold text-primary mb-2">Email</label>
+        <input id="entry.1499646864" name="entry.1499646864" type="email" class="w-full bg-stone-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary" />
+      </div>
     </div>
-   </form>
+    <div class="w-full px-4 mb-8">
+      <label for="entry.1060251717" class="text-base font-bold text-primary mb-2">Pesan</label>
+      <textarea id="entry.1060251717" name="entry.1060251717" class="w-full bg-stone-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
+    </div>
+    <div class="w-full px-4">
+      <button class="w-full text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg transition duration-500 btn-kirim" type="submit">Kirim</button>
+      <button class="w-full h-12 flex text-base font-semibold hidden text-white bg-primary bg-opacity-60 py-3 px-8 rounded-full shadow-lg transition duration-500 btn-loading" type="submit">
+        <span class="block mx-auto h-6 w-6 animate-spin text-white">
+          <svg class="fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Spinrilla</title><path d="M12 8.816a3.184 3.184 0 1 0 0 6.368 3.184 3.184 0 1 0 0-6.368zM12 0v3.918A8.082 8.082 0 0 0 3.918 12H0A12 12 0 0 1 12 0zm0 24v-3.918A8.082 8.082 0 0 0 20.082 12H24a12 12 0 0 1-12 12z"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</form>
+
+
   </div>
  </section>
  <!-- Contact section end  -->
@@ -426,14 +434,39 @@
 <script type="text/javascript" charset="utf-8">
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxqE3V1by7HCjSWqyCMLkiiDablI7aF8RhFHVYEu0_R-ZrIPQoioPNXncRoP5XD_wC2/exec'
-    const form = document.forms['contact-dillon']
+    const form = document.forms['gform']
     const btnKirim = document.querySelector('.btn-kirim')
     const btnLoading = document.querySelector('.btn-loading')
     const myAlert = document.querySelector('.my-alert')
     const btnClose = document.querySelector('#btn-close')
-
-
-    form.addEventListener('submit', e => {
+   var submitted = false;
+   
+    form.addEventListener('submit', function(e) {
+     e.preventDefault();
+ btnLoading.classList.toggle('hidden')
+ btnKirim.classList.toggle('hidden')
+ fetch(form.action, {
+  method: 'POST', body: new FormData(form)})
+      .then(response => {
+        btnLoading.classList.toggle('hidden')
+        btnKirim.classList.toggle('hidden')
+        myAlert.classList.toggle('hidden')
+        form.reset();
+        console.log('Success!', response)
+      })
+      .catch(error => {
+        btnLoading.classList.toggle('hidden')
+        btnKirim.classList.toggle('hidden')
+        myAlert.classList.toggle('hidden')
+      console.error('Pesan Terikirim dengan Gangguan', error.message);
+      form.reset();
+       
+      })
+})
+    btnClose.addEventListener("click", function() {
+     myAlert.classList.toggle('hidden')
+    }) 
+    /* form.addEventListener('submit', e => {
       e.preventDefault()
       btnLoading.classList.toggle('hidden')
       btnKirim.classList.toggle('hidden')
@@ -451,7 +484,7 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbxqE3V1by7HCjSWqyCMLk
     
     btnClose.addEventListener("click", function() {
      myAlert.classList.toggle('hidden')
-    })
+    }) */
  </script>
     
 
