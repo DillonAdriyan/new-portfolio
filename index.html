@@ -14,6 +14,13 @@
 
  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5766461075187863"
      crossorigin="anonymous"></script>
+<script>
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+   document.documentElement.classList.add('dark')
+  } else {
+   document.documentElement.classList.remove('dark')
+  }
+ </script>
  <title>My Portfolio</title>
 </head>
 <body>
@@ -429,6 +436,63 @@
  </a>
  <!-- Back to top end  -->
 
+<!-- Script contact -->
+<script type="text/javascript" charset="utf-8">
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxqE3V1by7HCjSWqyCMLkiiDablI7aF8RhFHVYEu0_R-ZrIPQoioPNXncRoP5XD_wC2/exec'
+    const form = document.forms['gform']
+    const btnKirim = document.querySelector('.btn-kirim')
+    const btnLoading = document.querySelector('.btn-loading')
+    const myAlert = document.querySelector('.my-alert')
+    const btnClose = document.querySelector('#btn-close')
+   var submitted = false;
+   
+    form.addEventListener('submit', function(e) {
+     e.preventDefault();
+ btnLoading.classList.toggle('hidden')
+ btnKirim.classList.toggle('hidden')
+ fetch(form.action, {
+  method: 'POST', body: new FormData(form)})
+      .then(response => {
+        btnLoading.classList.toggle('hidden')
+        btnKirim.classList.toggle('hidden')
+        myAlert.classList.toggle('hidden')
+        form.reset();
+        console.log('Success!', response)
+      })
+      .catch(error => {
+        btnLoading.classList.toggle('hidden')
+        btnKirim.classList.toggle('hidden')
+        myAlert.classList.toggle('hidden')
+      console.error('Pesan Terikirim dengan Gangguan', error.message);
+      form.reset();
+       
+      })
+})
+    btnClose.addEventListener("click", function() {
+     myAlert.classList.toggle('hidden')
+    }) 
+    /* form.addEventListener('submit', e => {
+      e.preventDefault()
+      btnLoading.classList.toggle('hidden')
+      btnKirim.classList.toggle('hidden')
+      fetch(scriptURL, {
+        method: 'POST', body: new FormData(form)})
+      .then(response => {
+        btnLoading.classList.toggle('hidden')
+        btnKirim.classList.toggle('hidden')
+        myAlert.classList.toggle('hidden')
+        form.reset();
+        console.log('Success!', response)
+      })
+      .catch(error => console.error('Error!', error.message))
+    })
+    
+    btnClose.addEventListener("click", function() {
+     myAlert.classList.toggle('hidden')
+    }) */
+ </script>
+    
 
  <script src="dist/js/script.js" type="text/javascript" charset="utf-8" async>
  </script>
