@@ -1,10 +1,13 @@
 module.exports = {
   content: ["./index.html"],
-  darkMode: 'class',
+  darkMode: 'selector',
   theme: {
+   fontFamily: {
+    'body': ['"Poppins', 'sans-serif']
+   },
     container: {
       center: true,
-      padding: '16px'
+      padding: '12px'
     },
     extend: {
       colors: {
@@ -20,4 +23,5 @@ module.exports = {
     },
   },
   plugins: [],
+
 }

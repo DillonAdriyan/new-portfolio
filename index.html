@@ -3,27 +3,35 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <meta name="google-adsense-account" content="ca-pub-5766461075187863">
- <link rel="icon" href="dist/icon.webp">
+ <link rel="icon" href="/icon.ico">
  <meta name="description" content="Dillon Adriyan, Web Developer makes some awesome website.">
                 <meta name="keywords" content="awesome, website, cool, amazing, dillon, dillonadriyan, pemalang, sikasur, belik, portofolio dillon, dillon adriyan, DILLON,">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="dist/style.css" type="text/css" media="all" />
-<script>
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-   document.documentElement.classList.add('dark')
-  } else {
-   document.documentElement.classList.remove('dark')
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Dillon Adriyan",
+    "alternateName": ["Dillon", "dllnadryn", "Dillon Adriyan Corp"],
+    "url": "https://portfolio.dillonadriyan.me/"
   }
+<!--  <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+ <link rel="stylesheet" href="dist/style.css" type="text/css" media="all" />
+ <link rel="stylesheet" href="dist/custom.css" type="text/css" media="all" />
+<script>
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+
  </script>
  <title>Dillon Adriyan | Porftolio</title>
 </head>
 <body>
  <!-- Header start -->
- <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 transition duration-700">
+ <header class="bg-transparent absolute top-0 w-full flex items-center z-10 transition duration-700">
   <div class="container">
    <div class="flex items-center justify-between relative">
     <div class="px-4">
@@ -41,7 +49,7 @@
 
      <!-- nav menu -->
 
-     <nav id="nav-menu" class="hidden transition duration-300 ease-in-out absolute py-5 bg-white shadow-lg  rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:shadow-stone-600 dark:shadow-md dark:bg-dark z-[999]">
+     <nav id="nav-menu" class="hidden transition duration-300 ease-in-out absolute py-5 bg-white shadow-lg  rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none dark:shadow-md dark:lg:shadow-none lg:rounded-none dark:shadow-stone-600 dark:shadow-md dark:bg-dark dark:lg:bg-transparent z-[999]">
       <ul class="block lg:flex">
        <li class="group">
         <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Beranda</a>
@@ -51,6 +59,9 @@
        </li>
        <li class="group">
         <a href="#portfolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio</a>
+       </li>
+       <li class="group">
+        <a href="#clients" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Clients</a>
        </li>
        <li>
         <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Blog</a>
@@ -93,7 +104,7 @@
     </div>
     <div class="w-full self-end px-4 md:w-1/2 ">
      <div class="relative mt-9 md:mt-9 md:mr-0">
-      <img src="dist/1.webp" alt="Dillon Adriyan" class="relative mx-auto max-w-full z-[3]" />
+      <img src="dist/1.webp" alt="Dillon Adriyan" class="relative md:w-[300px] mx-auto max-w-full z-[3]" />
 
       <span class="left-1/2 -translate-x-1/2 -bottom-20 absolute md:scale-120 z-1">
 
@@ -114,7 +125,7 @@
    <div class="flex flex-wrap">
     <div class="w-full px-4 mb-10 lg:w-1/2">
      <h4 class="font-bold uppercase text-primary text-lg mb-3">Tentang Saya</h4>
-     <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">Yuk, belajar web progamming.</h2>
+     <h2 class="font-semibold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">Bikin website usaha kamu dengan harga suka-suka.</h2>
      <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">
      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eaque numquam expedita saepe libero, optio repudiandae omnis rerum vel laborum!
      </p>
@@ -159,40 +170,49 @@
      </p>
     </div>
    </div>
-   <div class="w-full px-4 flex-wrap md:flex justify-center xl:w-10/12 xl:mx-auto">
-    <div class="mb-12 p-4 md:w-1/2">
+   <div class="w-full px-4 flex-wrap md:flex justify-between xl:w-10/12 xl:mx-auto">
+    <div class="mb-12 p-4 lg:w-1/2">
+     <div class="rounded-md shadow-md overflow-hidden">
+      <img src="dist/portofolio/project5.jpg" alt="Eliska" class="w-full">
+     </div>
+     <h3 class="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl text-dark mt-5 mb-3 dark:text-white">eLiska Website static</h3>
+     <p class="font-medium text-base md:text-lg lg:text-xl text-secondary">
+      Web aplikasi untuk wadah literasi siswa, project yang saya kembangkan sendiri menggunakan <span class="underline font-medium hover:text-sky-600"><a href="https://tailwindcss.com">Tailwindcss</a></span> css dengn plugin <span class="underline font-medium hover:text-sky-600"><a href="https://daisyui.com">DaisyUi</a></span>.
+     </p>
+    </div>
+    <div class="mb-12 p-4 lg:w-1/2">
      <div class="rounded-md shadow-md overflow-hidden">
       <a href="https://dillonadriyan.github.io/portofolio"><img src="dist/portofolio/project2.jpg" alt="Landing page" class="w-full"></a>
      </div>
-     <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Landing Page Dillon Adriyan</h3>
-     <p class="font-medium text-base text-secondary">
+     <h3 class="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl text-dark mt-5 mb-3 dark:text-white">Landing Page Dillon Adriyan</h3>
+     <p class="font-medium text-base text-secondary md:text-lg lg:text-xl">
       Portfolio lama saya yang dibuat menggunakan bantuan CSS framework dari Bootstrap v3.
      </p>
     </div>
-    <div class="mb-12 p-4 md:w-1/2">
+    <div class="mb-12 p-4 lg:w-1/2">
      <div class="rounded-md shadow-md overflow-hidden">
       <img src="dist/portofolio/project1.jpg" alt="X TKRO 2 " class="w-full">
      </div>
-     <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">X TKRO 2 website <span class="text-dark opacity-70 inline-block">(disable)</span></h3>
-     <p class="font-medium text-base text-secondary">
+     <h3 class="font-semibold text-xl md:text-2xl lg:text-4xl xl:text-5xl text-dark mt-5 mb-3 dark:text-white">X TKRO 2 website <span class="text-dark opacity-70 inline-block">(disable)</span></h3>
+     <p class="font-medium text-base text-secondary md:text-lg lg:text-xl">
       Web yang saya buat menggunakan bahasa pemrogaman PHP, website yang awalnya bertujuan untuk mempermudah siswa XTKRO2 melihat jadwal, piket, dan kas.
      </p>
     </div>
-    <div class="mb-12 p-4 md:w-1/2">
+    <div class="mb-12 p-4 lg:w-1/2">
      <div class="rounded-md shadow-md overflow-hidden">
       <a href="https://dillonadriyan.github.io"><img src="dist/portofolio/project3.jpg" alt="Github pages" class="w-full"></a>
      </div>
-     <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Github Pages Dillon Adriyan</h3>
-     <p class="font-medium text-base text-secondary">
+     <h3 class="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl text-dark mt-5 mb-3 dark:text-white">Github Pages Dillon Adriyan</h3>
+     <p class="font-medium text-base text-secondary md:text-lg lg:text-xl">
       Project Web yang terinspirasi dari linktree, dengan menambahkan sedikit elemen dan mengubah backround menggunakan Pattern.
      </p>
     </div>
-    <div class="mb-12 p-4 md:w-1/2">
+    <div class="mb-12 p-4 lg:w-1/2">
      <div class="rounded-md shadow-md overflow-hidden">
       <img src="dist/portofolio/project4.jpg" alt="First web" class="w-full">
      </div>
-     <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">First website learning</h3>
-     <p class="font-medium text-base text-secondary">
+     <h3 class="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl text-dark mt-5 mb-3 dark:text-white">First website learning</h3>
+     <p class="font-medium text-base text-secondary md:text-lg lg:text-xl">
       Hasil belajar saya pada seri CSS Position.
      </p>
     </div>
@@ -362,7 +382,7 @@
      </p>
     </div>
     <div class="w-full px-4 mb-12 md:w-1/3">
-     <h3 class="font-semibold text-xl text-white mb-5">Kategori Tulisam</h3>
+     <h3 class="font-semibold text-xl text-white mb-5">Kategori Tulisan</h3>
      <ul class="text-stone-300">
       <li>
        <a href="#" class="inline-block text-base hover:text-primary mb-3">Progamming</a>
@@ -428,7 +448,7 @@
 
 
  <!-- Back to top start  -->
- <a href="#home" class="h-12 w-12 fixed z-[999] hidden justify-center items-center bottom-4 right-4 bg-primary rounded-full p-4 hover:animate-pulse" id="to-top">
+ <a href="#home" class="h-12 w-12 fixed z-[999] hidden justify-center items-center bottom-4 right-8 bg-primary rounded-full p-4 hover:animate-pulse" id="to-top">
   <span class="block h-4 w-5 border-t-2 border-l-2 rotate-45 mt-2">
   </span>
  </a>
