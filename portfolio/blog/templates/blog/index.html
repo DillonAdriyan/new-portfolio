@@ -1,0 +1,65 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<section id="blog" class="transition duration-700 ease-in-out pt-36 pb-32 bg-stone-100 dark:bg-dark">
+  <div class="container">
+   <div class="w-full px-4">
+    <div class="max-w-xl mx-auto text-center mb-16">
+     <h4 class="font-semibold text-lg text-primary mb-2">Blog</h4>
+     <h2 class="font-bold text-dark text-3xl mb-4 md:text-4xl xl:text-5xl dark:text-white">Tulisan Terkini</h2>
+     <p class="font-medium text-md text-secondary lg:text-lg">
+      Contoh tampilan untuk blog saya nanti, dibawah hanya sekedar Contoh dan foto random dari unsplash.
+     </p>
+    </div>
+   </div>
+   {% if blogs %}
+    {% for blog in blogs %}
+   <div class="flex flex-wrap">
+    <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+     <div class="bg-white dark:bg-second-dark rounded-xl overflow-hidden shadow-lg mb-10 ">
+      <div class="gambarBlog">
+      <img src="{{ blog.image.url }}"
+      alt="progamming">
+      </div>
+      <div class="py-8 px-6">
+       <h3>
+        <a href="https://picsum.photos"
+        class="block mb-3 font-semibold text-xl
+        text-dark hover:text-primary truncate
+        dark:text-white">{{ blog.title | title }}</a></h3>
+       <p class="font-medium text-base
+       text-secondary mb-6">
+        {{ blog.content | truncatewords:20 }}
+       </p>
+       <a href="{% url 'blog_detail' blog.id %}"
+       class="font-medium text-sm text-white
+       bg-primary mt-4 py-3 px-6 rounded-lg
+       hover:opacity-80">Baca Selengkapnya</a>
+       <div class="flex mt-6">
+        <div class="">
+         <div class="w-12 h-12 rounded-full
+         overflow-hidden">
+          
+         <img src="{{ blog.user.userprofile.photo_profile.url }}"
+         alt="{{ blog.user.first_name }}">
+         </div>
+        </div>
+        <div class="h-10 mt-1 mx-4 w-[1px] bg-slate-700"></div>
+       <div class="">
+        <h2 class="text-md font-semibold text-primary">
+         {{ blog.user.first_name }}
+         {{blog.user.last_name }}</h2>
+        <p class="text-sm text-gray-500">{{ blog.created_at }}</p>
+       </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+    {% endfor %}
+   {% else %}
+    <p>Tidak ada blog</p>
+   {% endif %}
+  </div>
+ </section>
+{% endblock %}
