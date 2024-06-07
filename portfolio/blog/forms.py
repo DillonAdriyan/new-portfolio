@@ -1,5 +1,5 @@
 from django import forms
-from .models import Comment, UserProfile, CustomUser
+from .models import Comment, UserProfile, CustomUser, Blog
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 class CommentForm(forms.ModelForm):
@@ -34,3 +34,26 @@ class CustomRegistrationForm(forms.ModelForm):
                 user_profile.photo_profile = self.cleaned_data['photo_profile']
                 user_profile.save()
         return user
+        
+        
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = Blog
+        fields = ['title', 'content', 'image', 'category', 'user']
+        widgets = {
+            'user': forms.HiddenInput(),
+        }
+
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        if self.user:
+            self.fields['user'].initial = self.user
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        if not instance.user_id:
+            instance.user_by = self.user
+        if commit:
+            instance.save()
+        return instance

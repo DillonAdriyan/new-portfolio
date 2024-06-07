@@ -1,5 +1,5 @@
+{% load compress %}
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
@@ -38,7 +38,9 @@
  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
  })(window,document,'script','dataLayer','GTM-PB6M6X3S');</script>
  <!-- End Google Tag Manager -->
+ {% compress css %}
  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+ {% endcompress %}
  <script>
  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
    document.documentElement.classList.add('dark')
@@ -104,6 +106,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          <span class="ml-2 text-sm text-stone-500">Dark</span>
         </div>
        </li>
+       {% if user.is_authenticated %}
+       <li class="group">
+        <a href="{% url 'blog' %}" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Upload Blog</a>
+       </li>
+       <li class="group">
+        <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="{% url 'logout' %}">Logout</a>
+       </li>
+       {% else %}
+       <li class="group">
+        <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="{% url 'login' %}">Login</a>
+       </li>
+       <li class="group">
+        <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="{% url 'signup' %}">Daftar</a>
+       </li>
+       {% endif %}
       </ul>
      </nav>
     </div>
@@ -112,7 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </header>
  {% block content %}
  {% endblock %}
-  <footer class="bg-dark pt-24 pb-12">
+  <footer class="bg-dark pt-24 mt-12 pb-12">
   <div class="container">
    <div class="flex flex-wrap">
     <div class="w-full px-4 mb-12 text-stone-300 font-medium md:w-1/3">
