@@ -106,8 +106,32 @@ def login_view(request):
         return redirect('index')
     
     return render(request, 'auth/login.html')
-def logout(request):
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            request.session['username'] = user.username
+            messages.success(request, 'Login berhasil! Selamat datang.')
+            return redirect('index')
+        else:
+            messages.error(request, 'Username atau Password Salah !')
+            return render(request, 'auth/login.html')
+    
+    if request.user.is_authenticated:
+        return redirect('index')
+    
+    return render(request, 'auth/login.html')
+
+
+
+def logout_view(request):
     # Lakukan logout
+    print('logged out')
     logout(request)
     messages.success(request,'Berhasil Logout')
     return redirect('login')

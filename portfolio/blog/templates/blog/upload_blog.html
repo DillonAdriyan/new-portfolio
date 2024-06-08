@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
- <section id="blogUpload" class="mb-24 mt-12 dark:bg-gray-900">
+ <section id="blogUpload" class="pb-24 pt-16 dark:bg-gray-900">
   <div class="container">
-   <h1 class="text-3xl font-bold text-center mt-24 mb-8">Make Blog post</h1>
+   <h1 class="text-3xl font-bold text-center mt-24 mb-8 dark:text-white">Make Blog post</h1>
      {% if messages %}
   {% for message in messages %}
   {% if message.tags == 'error' %}
@@ -16,11 +16,11 @@
    <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
  <div class="sampul">
-  <h2 class="text-xl font-semibold mb-2">Image</h2>
+  <h2 class="text-xl font-semibold mb-2 dark: text-white">Image</h2>
 <div class="flex items-center justify-center w-full">
     <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-36 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-            <img id="previewImage" src="#" alt="Preview" style="display: none; max-width: auto; max-height: 200px;" class=""/>
+        <div class="flex flex-col items-center justify-center pt-5 pb-6 relative overflow-hidden">
+            <img id="preview" src="" alt="Preview" style="display: none;" class="absolute"/>
             <svg class="w-4 h-4 mt-2 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
             </svg>
@@ -28,6 +28,7 @@
             <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
         </div>
 {{ form.image }}
+            <p id="fileName" class="text-sm font-semibold dark:text-white"></p>
     </label>
 </div> 
 </div>
@@ -51,22 +52,29 @@
   </div>
  </section>
    <script>
-  document.getElementById('id_gambar').accept = '.jpg, .png, .jpeg';
-    document.getElementById('id_gambar').addEventListener('change', function(e) {
-        var file = e.target.files[0];
-        var imageType = /image.*/;
+   document.getElementById('dropzone-file').addEventListener('change', function(event) {
+    const file = event.target.files[0];
 
-        if (file && file.type.match(imageType)) {
-            var reader = new FileReader();
+    // Jika tidak ada file, keluar dari fungsi
+    if (!file) {
+        return;
+    }
 
-            reader.onload = function(e) {
-                var preview = document.getElementById('previewImage');
-                preview.src = e.target.result;
-                preview.style.display = 'block';
-            };
+    // Menampilkan nama file
+    document.getElementById('fileName').textContent = `${file.name}`;
 
-            reader.readAsDataURL(file);
-        }
-    });
+    // Membuat objek URL untuk file yang diupload
+    const reader = new FileReader();
+
+    // Ketika file selesai dibaca
+    reader.onload = function(e) {
+        const preview = document.getElementById('preview');
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+    };
+
+    // Membaca file sebagai Data URL (base64)
+    reader.readAsDataURL(file);
+});
 </script>
 {% endblock %}

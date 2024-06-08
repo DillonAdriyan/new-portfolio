@@ -76,6 +76,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
      <nav id="nav-menu" class="hidden transition duration-300 ease-in-out absolute py-5 bg-white shadow-lg  rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none dark:shadow-md dark:lg:shadow-none lg:rounded-none dark:shadow-stone-600 dark:shadow-md dark:bg-dark dark:lg:bg-transparent z-[999]">
       <ul class="block lg:flex">
+       <li>
+        <p class="font-semibold text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white lg:hidden">Menu</p>
+       </li>
+              {% if user.is_authenticated %}
+       <li class="group">
+        <a href="{% url 'blog' %}" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Upload Blog</a>
+       </li>
+       <li class="group">
+        <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="{% url 'logout' %}">Logout</a>
+       </li>
+       {% else %}
        <li class="group">
         <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Beranda</a>
        </li>
@@ -106,14 +117,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          <span class="ml-2 text-sm text-stone-500">Dark</span>
         </div>
        </li>
-       {% if user.is_authenticated %}
-       <li class="group">
-        <a href="{% url 'blog' %}" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Upload Blog</a>
-       </li>
-       <li class="group">
-        <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="{% url 'logout' %}">Logout</a>
-       </li>
-       {% else %}
        <li class="group">
         <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white" href="{% url 'login' %}">Login</a>
        </li>
@@ -129,7 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </header>
  {% block content %}
  {% endblock %}
-  <footer class="bg-dark pt-24 mt-12 pb-12">
+  <footer class="bg-dark pt-24 pb-12">
   <div class="container">
    <div class="flex flex-wrap">
     <div class="w-full px-4 mb-12 text-stone-300 font-medium md:w-1/3">
@@ -219,61 +222,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <!-- Back to top end  -->
 
 <!-- Script contact -->
-<script type="text/javascript" charset="utf-8">
-
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxqE3V1by7HCjSWqyCMLkiiDablI7aF8RhFHVYEu0_R-ZrIPQoioPNXncRoP5XD_wC2/exec'
-    const form = document.forms['gform']
-    const btnKirim = document.querySelector('.btn-kirim')
-    const btnLoading = document.querySelector('.btn-loading')
-    const myAlert = document.querySelector('.my-alert')
-    const btnClose = document.querySelector('#btn-close')
-   var submitted = false;
-   
-    form.addEventListener('submit', function(e) {
-     e.preventDefault();
- btnLoading.classList.toggle('hidden')
- btnKirim.classList.toggle('hidden')
- fetch(form.action, {
-  method: 'POST', body: new FormData(form)})
-      .then(response => {
-        btnLoading.classList.toggle('hidden')
-        btnKirim.classList.toggle('hidden')
-        myAlert.classList.toggle('hidden')
-        form.reset();
-        console.log('Success!', response)
-      })
-      .catch(error => {
-        btnLoading.classList.toggle('hidden')
-        btnKirim.classList.toggle('hidden')
-        myAlert.classList.toggle('hidden')
-      console.error('Pesan Terikirim dengan Gangguan', error.message);
-      form.reset();
-       
-      })
-})
-    btnClose.addEventListener("click", function() {
-     myAlert.classList.toggle('hidden')
-    }) 
-    /* form.addEventListener('submit', e => {
-      e.preventDefault()
-      btnLoading.classList.toggle('hidden')
-      btnKirim.classList.toggle('hidden')
-      fetch(scriptURL, {
-        method: 'POST', body: new FormData(form)})
-      .then(response => {
-        btnLoading.classList.toggle('hidden')
-        btnKirim.classList.toggle('hidden')
-        myAlert.classList.toggle('hidden')
-        form.reset();
-        console.log('Success!', response)
-      })
-      .catch(error => console.error('Error!', error.message))
-    })
-    
-    btnClose.addEventListener("click", function() {
-     myAlert.classList.toggle('hidden')
-    }) */
- </script>
     
 
  <script src="{% static 'js/script.js' %}" type="text/javascript" charset="utf-8" async>
