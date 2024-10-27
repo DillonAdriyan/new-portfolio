@@ -150,7 +150,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <div class="flex flex-wrap">
     <div class="w-full px-4 mb-10 lg:w-1/2">
      <h2 class="font-bold uppercase text-primary text-lg mb-3 about">Tentang Saya</h2>
-     <h3 class="font-semibold text-dark text-2xl mb-5 max-w-md lg:text-4xl dark:text-white">Front-end Web Developer | Tailwindcss.</h3>
+     <h3 class="font-semibold text-dark text-2xl mb-5 max-w-md lg:text-4xl dark:text-white">Front-end Web Developer</h3>
      <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">
      Saya Dillon, pemuda yang tertarik dibidang coding, berawal dari hobi menulis sintaks menjadikan Progamming pekerjaan sampingan dikala waktu luang.
      </p>
@@ -186,66 +186,136 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <!-- About section end  -->
 
  <!-- Portfolio section start  -->
- <section id="portfolio" class="transition duration-700 ease-in-out pt-36 pb-16 bg-stone-100 dark:bg-second-dark">
-  <div class="container">
-   <div class="w-full px-4">
-    <div class="max-w-xl mx-auto text-center mb-16">
-     <h4 class="font-semibold text-lg text-primary mb-2 ">Portfolio</h4>
-     <h2 class="font-bold text-dark text-3xl mb-4 md:text-4xl xl:text-5xl dark:text-white">Project Terbaru</h2>
-     <p class="font-medium text-md text-secondary lg:text-lg">
-      Beberapa screenshot dari progress saya dalam pembelajaran Web Progamming.
-     </p>
+<section id="portfolio" class="transition duration-700 ease-in-out py-20 bg-stone-100 dark:bg-second-dark">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h4 class="font-semibold text-lg text-primary mb-2">Portfolio</h4>
+      <h2 class="font-bold text-3xl md:text-4xl xl:text-5xl text-dark dark:text-white">Project Terbaru</h2>
+      <p class="text-secondary text-md lg:text-lg mt-4 max-w-2xl mx-auto">
+        Beberapa screenshot dari progress saya dalam pembelajaran Web Progamming.
+      </p>
     </div>
-   </div>
-   <div class="w-full px-4 flex-wrap md:flex justify-between xl:w-10/12 xl:mx-auto">
-    <div class="mb-12 p-4 lg:w-1/2">
-     <div class="rounded-md shadow-md overflow-hidden">
-      <img src="dist/portofolio/project5.jpg" alt="Eliska" class="w-full">
-     </div>
-     <h3 class="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl text-dark mt-5 mb-3 dark:text-white"><a href="https://eliska.dillonadriyan.me">eLiska Website static</a></h3>
-     <p class="font-medium text-base md:text-lg lg:text-xl text-secondary">
-      Web aplikasi untuk wadah literasi siswa, project yang saya kembangkan sendiri menggunakan <span class="underline font-medium hover:text-sky-600"><a href="https://tailwindcss.com">Tailwindcss</a></span> css dengn plugin <span class="underline font-medium hover:text-sky-600"><a href="https://daisyui.com">DaisyUi</a></span>.
-     </p>
+    <div class="grid gap-8 lg:gap-12 md:grid-cols-2 xl:grid-cols-3">
+      <!-- Project 1 -->
+      <div class="bg-white dark:bg-second-dark shadow-lg rounded-lg overflow-hidden transition hover:-translate-y-2 duration-300">
+        <a href="https://eliska.dillonadriyan.me" class="block overflow-hidden">
+          <img src="dist/portofolio/project5.jpg"
+          alt="Eliska" height="192" class="w-full h-full object-cover transform hover:scale-105
+          transition duration-300">
+        </a>
+        <div class="p-6">
+          <h3 class="font-semibold text-xl lg:text-2xl text-dark dark:text-white"><a href="https://eliska.dillonadriyan.me">eLiska Website static</a></h3>
+          <p class="text-secondary text-sm md:text-base mt-4">
+            Web aplikasi untuk wadah literasi siswa, menggunakan <span class="underline font-medium hover:text-sky-600"><a href="https://tailwindcss.com">Tailwind CSS</a></span> dan <span class="underline font-medium hover:text-sky-600"><a href="https://daisyui.com">DaisyUi</a></span>.
+          </p>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="bg-white dark:bg-second-dark shadow-lg rounded-lg overflow-hidden transition hover:-translate-y-2 duration-300">
+        <a
+        href="https://dillonadriyan.github.io/studio-dillon"
+        class="block overflow-hidden">
+          <img src="dist/portofolio/ecom.jpg"
+          alt="Landing page" height="192"
+          class="w-full h-full object-cover transform
+          hover:scale-105
+          transition duration-300">
+        </a>
+        <div class="p-6">
+          <h3 class="font-semibold text-xl
+          lg:text-2xl text-dark
+          dark:text-white">Django E-commerce </h3>
+          <p class="text-secondary text-sm md:text-base mt-4">
+            Website e-commerce yang saya buat
+            menggunakan Django dan dalam
+            pengembangan.
+          </p>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="bg-white dark:bg-second-dark shadow-lg rounded-lg overflow-hidden transition hover:-translate-y-2 duration-300">
+        <a
+        href="https://dillonadriyan.github.io/warung-texas"
+        class="block overflow-hidden">
+          <img src="dist/portofolio/wartex.jpg"
+          alt="Warung Texas" height='192'
+          class="w-full h-full
+          object-cover transform hover:scale-105
+          transition duration-300">
+        </a>
+        <div class="p-6">
+          <h3 class="font-semibold text-xl
+          lg:text-2xl text-dark
+          dark:text-white">Warung Texas</h3>
+          <p class="text-secondary text-sm md:text-base mt-4">
+            F&B website untuk teman saya, website
+            untuk warung makanan dan minuman serta
+            cemilan.
+          </p>
+        </div>
+      </div>
+      <!-- Project 4 -->
+      <div class="bg-white dark:bg-second-dark shadow-lg rounded-lg overflow-hidden transition hover:-translate-y-2 duration-300">
+        <a href="https://dillonadriyan.github.io" class="block overflow-hidden">
+          <img src="dist/portofolio/project3.jpg"
+          alt="Github pages" height='192'
+          class="w-full h-full
+          object-cover transform hover:scale-105
+          transition duration-300">
+        </a>
+        <div class="p-6">
+          <h3 class="font-semibold text-xl lg:text-2xl text-dark dark:text-white">Github Pages Dillon Adriyan</h3>
+          <p class="text-secondary text-sm md:text-base mt-4">
+            Project terinspirasi dari Linktree, dengan penambahan elemen dan background pattern.
+          </p>
+        </div>
+      </div>
+      <!-- Project 5 -->
+      <div class="bg-white dark:bg-second-dark shadow-lg rounded-lg overflow-hidden transition hover:-translate-y-2 duration-300">
+       <a href="https://dillonadriyan.studio">
+        <img src="dist/portofolio/smsreact.jpg"
+        alt="First web" height="192" class="w-full
+        h-ful
+        object-cover transform hover:scale-105
+        transition duration-300">
+       </a>
+        <div class="p-6">
+          <h3 class="font-semibold text-xl
+          lg:text-2xl text-dark
+          dark:text-white">Student Management
+          System </h3>
+          <p class="text-secondary text-sm md:text-base mt-4">
+            LMS web app yang saya buat menggunakan
+            React js, dan menggunakan Django untuk
+            framework backend, serta Rest
+            API agar dapat berkomunikasi dengan
+            Front end
+          </p>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-second-dark shadow-lg rounded-lg overflow-hidden transition hover:-translate-y-2 duration-300">
+       <a href="https://dapuroprekan.works">
+        <img src="dist/portofolio/bengkel.jpg"
+        alt="First web" height="192" class="w-full
+        h-ful
+        object-cover transform hover:scale-105
+        transition duration-300">
+       </a>
+        <div class="p-6">
+          <h3 class="font-semibold text-xl
+          lg:text-2xl text-dark
+          dark:text-white">Dapur Oprekan</h3>
+          <p class="text-secondary text-sm md:text-base mt-4">
+           Website Bengkel yang saya buatkan untuk
+           teman saya, agar bengkel nya dapat
+           dicari di google.
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="mb-12 p-4 lg:w-1/2">
-     <div class="rounded-md shadow-md overflow-hidden">
-      <a href="https://dillonadriyan.github.io/portofolio"><img src="dist/portofolio/project2.jpg" alt="Landing page" class="w-full"></a>
-     </div>
-     <h3 class="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl text-dark mt-5 mb-3 dark:text-white">Landing Page Dillon Adriyan</h3>
-     <p class="font-medium text-base text-secondary md:text-lg lg:text-xl">
-      Portfolio lama saya yang dibuat menggunakan bantuan CSS framework dari Bootstrap v3.
-     </p>
-    </div>
-    <div class="mb-12 p-4 lg:w-1/2">
-     <div class="rounded-md shadow-md overflow-hidden">
-      <img src="dist/portofolio/project1.jpg" alt="X TKRO 2 " class="w-full">
-     </div>
-     <h3 class="font-semibold text-xl md:text-2xl lg:text-4xl xl:text-5xl text-dark mt-5 mb-3 dark:text-white">X TKRO 2 website <span class="text-dark opacity-70 inline-block">(disable)</span></h3>
-     <p class="font-medium text-base text-secondary md:text-lg lg:text-xl">
-      Web yang saya buat menggunakan bahasa pemrogaman PHP, website yang awalnya bertujuan untuk mempermudah siswa XTKRO2 melihat jadwal, piket, dan kas.
-     </p>
-    </div>
-    <div class="mb-12 p-4 lg:w-1/2">
-     <div class="rounded-md shadow-md overflow-hidden">
-      <a href="https://dillonadriyan.github.io"><img src="dist/portofolio/project3.jpg" alt="Github pages" class="w-full"></a>
-     </div>
-     <h3 class="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl text-dark mt-5 mb-3 dark:text-white">Github Pages Dillon Adriyan</h3>
-     <p class="font-medium text-base text-secondary md:text-lg lg:text-xl">
-      Project Web yang terinspirasi dari linktree, dengan menambahkan sedikit elemen dan mengubah backround menggunakan Pattern.
-     </p>
-    </div>
-    <div class="mb-12 p-4 lg:w-1/2">
-     <div class="rounded-md shadow-md overflow-hidden">
-      <img src="dist/portofolio/project4.jpg" alt="First web" class="w-full">
-     </div>
-     <h3 class="font-semibold text-xl md:text-2xl lg:text-3xl xl:text-4xl text-dark mt-5 mb-3 dark:text-white">First website learning</h3>
-     <p class="font-medium text-base text-secondary md:text-lg lg:text-xl">
-      Hasil belajar saya pada seri CSS Position.
-     </p>
-    </div>
-   </div>
   </div>
- </section>
+</section>
+
  <!-- Portfolio section end  -->
 
 

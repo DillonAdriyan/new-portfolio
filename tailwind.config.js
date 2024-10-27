@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./index.html"],
+  content: ["./**/*.html"],
   darkMode: 'selector',
   theme: {
    fontFamily: {
@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#78716c',
-        secondary: '#949494',
+        secondary: '#787878',
        'secondary-2': '#afafaf',
         dark: '#1c1917',
         'second-dark': '#262626'
@@ -22,6 +22,6 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require('/data/data/com.termux/files/home/node_modules/flowbite/plugin')],
 
 }
