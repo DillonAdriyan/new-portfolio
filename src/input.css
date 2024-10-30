@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
   @font-face {
     font-family: 'Poppins';
     font-style: normal;
@@ -31,10 +30,10 @@
     font-display: swap;
     src: url(../dist/Poppins-Bold.woff2) format('woff2');
   }
-  html {
-    font-family: "Poppins", system-ui, sans-serif;
+  body {
+    font-family: "Poppins", sans-serif;
   }
-}
+
 
 
 .navbar-fixed {

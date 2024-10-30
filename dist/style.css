@@ -921,58 +921,6 @@ input[type="range"]::-ms-fill-lower {
   background: #3F83F8;
 }
 
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 400;
-
-  font-display: swap;
-
-  src: url(../dist/Poppins-Regular.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 600;
-
-  font-display: swap;
-
-  src: url(../dist/Poppins-SemiBold.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 500;
-
-  font-display: swap;
-
-  src: url(../dist/Poppins-Medium.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Poppins';
-
-  font-style: normal;
-
-  font-weight: 700;
-
-  font-display: swap;
-
-  src: url(../dist/Poppins-Bold.woff2) format('woff2');
-}
-
-html {
-  font-family: "Poppins", system-ui, sans-serif;
-}
-
 .container {
   width: 100%;
   margin-right: auto;
@@ -1250,10 +1198,6 @@ html {
   height: 1rem;
 }
 
-.h-48 {
-  height: 12rem;
-}
-
 .h-5 {
   height: 1.25rem;
 }
@@ -1424,6 +1368,10 @@ html {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .scroll-smooth {
@@ -2015,6 +1963,58 @@ html {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@font-face {
+  font-family: 'Poppins';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  font-display: swap;
+
+  src: url(../dist/Poppins-Regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+
+  font-style: normal;
+
+  font-weight: 600;
+
+  font-display: swap;
+
+  src: url(../dist/Poppins-SemiBold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Poppins';
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  font-display: swap;
+
+  src: url(../dist/Poppins-Medium.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  font-display: swap;
+
+  src: url(../dist/Poppins-Bold.woff2) format('woff2');
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 .navbar-fixed {
   position: fixed;
   z-index: 999;
@@ -2479,11 +2479,6 @@ html {
 .dark\:bg-gray-700:where(.dark, .dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
-
-.dark\:bg-gray-800:where(.dark, .dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
 .dark\:bg-second-dark:where(.dark, .dark *) {
